@@ -4,14 +4,27 @@ import { createBrowserRouter } from "react-router-dom";
 // import Loading from "@/components/Loading";
 import Auth from "@/pages/Auth";
 import Layout from "@/pages/Layout";
+import Rooms from "@/pages/Rooms";
 
 export const Router = createBrowserRouter([
     {
         path:"/",
-        element:<Auth/>,
+        element:<Layout/>,
+        children:[
+            {
+                index:true,
+                element:<Rooms/>
+            },
+            {
+                path:"/rooms",
+                element:<Rooms/>
+            }
+        ],
+        
     },
     {
-        path:"/dashboard",
-        element:<Layout/>
+        path:"/auth",
+        element:<Auth/>
     }
+        
 ])
