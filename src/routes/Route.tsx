@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Auth from "@/pages/Auth";
 import Layout from "@/pages/Layout";
 import Rooms from "@/pages/Rooms";
+import NotFound from "@/pages/NotFound";
 
 export const Router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ export const Router = createBrowserRouter([
     {
         path:"/auth",
         element:<Auth/>
+    },
+    {
+        path:"/*",
+        element:<NotFound/>
     }
         
 ])

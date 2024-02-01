@@ -13,7 +13,8 @@ const Rooms = () => {
             location:"Boudha",
             price:18000,
             status:"available",
-            bathroom:"attached"
+            bathroom:"attached",
+            eligible:"family"
         },
         {
             id:2,
@@ -21,7 +22,8 @@ const Rooms = () => {
             location:"New Baneshwor",
             price:12000,
             status:"booked",
-            bathroom:"shared"
+            bathroom:"shared",
+            eligible:"2 people"
         },
         {
             id:3,
@@ -29,7 +31,8 @@ const Rooms = () => {
             location:"Kupandol",
             price:7000,
             status:"pending",
-            bathroom:"shared"
+            bathroom:"shared",
+            eligible:"anyone"
         }
     ]
   return (
@@ -44,8 +47,10 @@ const Rooms = () => {
                     <TableHead>Name</TableHead>
                     <TableHead>Location</TableHead>
                     <TableHead>Status</TableHead>
-                    <TableHead>Price</TableHead>
                     <TableHead>Bathroom</TableHead>
+                    <TableHead>Eligibile</TableHead>
+                    <TableHead>Price</TableHead>
+                    <TableHead>Action</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -56,8 +61,10 @@ const Rooms = () => {
                             <TableCell>{room.name}</TableCell>
                             <TableCell>{room.location}</TableCell>
                             <TableCell>{roomStatusConstant[room.status]}</TableCell>
-                            <TableCell className='font-semibold'>{currencyFormat(room.price)}</TableCell>
                             <TableCell>{room.bathroom}</TableCell>
+                            <TableCell className='font-medium'>{room.eligible}</TableCell>
+                            <TableCell className='font-semibold'>{currencyFormat(room.price)}</TableCell>
+                            <TableCell>---</TableCell>
                         </TableRow>
                     ))
                 }
